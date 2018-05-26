@@ -1,0 +1,11 @@
+{
+  "name": "search_guru",
+  "version": "1.0.0",
+  "description": "Online portal to search through the profiles of the faculties teaching at different IITs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aashish-ak",
+  "license": "ISC"
+}
