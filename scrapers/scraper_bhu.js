@@ -1,9 +1,9 @@
 var request = require('request');
 var cheerio = require('cheerio');
-var iitd = require('../models/iitd');
-function iitdScraper() {
+var iitbhu = require('../models/iitbhu');
+function iitbhuScraper() {
     var options = {
-        url: 'http://www.cse.iitd.ernet.in/index.php/2011-12-29-23-14-30/faculty',
+        url: 'https://www.iitbhu.ac.in/dept/cse/people/faculty',
         method: 'GET',
         proxy: 'http://10.7.0.1:8080',
         headers: {
@@ -17,8 +17,8 @@ function iitdScraper() {
         if (!error && response.statusCode == 200) {
 
             var $ = cheerio.load(html);
-            var fac = $('div.item-page').children('table').children('tbody').children('tr').filter(function (i, el) {
-                var name = $(this).children().find('a').text().trim();
+            var fac = $('div.view-content').children('table').children('tbody').children('tr').filter(function (i, el) {
+                var name = $(this).children().find('td').text().trim();
                 return name != "" && name != '\n';
             });
 
