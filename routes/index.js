@@ -7,11 +7,13 @@ var iitd = require('../models/iitd');
 var iitb = require('../models/iitb');
 var iitmandi = require('../models/iitmandi');
 var iitk = require('../models/iitk');
+var iitr = require('../models/iitr');
 
 var iitdScraper = require('../scrapers/scraper_iitd');
 var iitbScraper = require('../scrapers/scraper_iitb');
 var iitmandiScraper = require('../scrapers/scraper_iitmandi');
 var iitkScraper = require('../scrapers/scraper_iitk');
+var iitrScraper = require('../scrapers/scraper_iitr');
 
 router.get('/', (req, res, next) => {
     res.send('foobar');
@@ -82,6 +84,25 @@ router.get('/iitk/data', (req, res, next) => {
     iitk.find(function(err, iitk){
         if(!err){
             res.json(iitk);
+        }
+        else{
+            console.log(err);
+        }
+    });
+});
+
+
+// IIT Roorkee
+
+router.get('/iitr', (req, res, next)=>{
+    iitrScraper.iitrScraper();
+    res.json({ msg:'Scraping IITR Started'});
+});
+
+router.get('/iitr/data', (req, res, next) => {
+    iitr.find(function(err, iitr){
+        if(!err){
+            res.json(iitr);
         }
         else{
             console.log(err);
