@@ -1,0 +1,320 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', '-g', 'install' ]
+2 info using npm@3.5.2
+3 info using node@v6.11.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData .
+8 silly fetchDirectoryPackageData .
+9 silly install normalizeTree
+10 silly loadCurrentTree Finishing
+11 silly loadIdealTree Starting
+12 silly install loadIdealTree
+13 silly cloneCurrentTree Starting
+14 silly install cloneCurrentTreeToIdealTree
+15 silly cloneCurrentTree Finishing
+16 silly loadShrinkwrap Starting
+17 silly install loadShrinkwrap
+18 silly loadShrinkwrap Finishing
+19 silly loadAllDepsIntoIdealTree Starting
+20 silly install loadAllDepsIntoIdealTree
+21 silly resolveWithNewModule search_guru@1.0.0 checking installable status
+22 silly cache add args [ '.', null ]
+23 verbose cache add spec .
+24 silly cache add parsed spec Result {
+24 silly cache add   raw: '.',
+24 silly cache add   scope: null,
+24 silly cache add   name: null,
+24 silly cache add   rawSpec: '.',
+24 silly cache add   spec: '/media/aman/New Volume/iit mandi/searchGuru/search_guru',
+24 silly cache add   type: 'directory' }
+25 verbose addLocalDirectory /home/aman/.npm/search_guru/1.0.0/package.tgz not in flight; packing
+26 info lifecycle search_guru@1.0.0~prepublish: search_guru@1.0.0
+27 silly lifecycle search_guru@1.0.0~prepublish: no script for prepublish, continuing
+28 verbose tar pack [ '/home/aman/.npm/search_guru/1.0.0/package.tgz',
+28 verbose tar pack   '/media/aman/New Volume/iit mandi/searchGuru/search_guru' ]
+29 verbose tarball /home/aman/.npm/search_guru/1.0.0/package.tgz
+30 verbose folder /media/aman/New Volume/iit mandi/searchGuru/search_guru
+31 verbose addLocalTarball adding from inside cache /home/aman/.npm/search_guru/1.0.0/package.tgz
+32 silly cache afterAdd search_guru@1.0.0
+33 verbose afterAdd /home/aman/.npm/search_guru/1.0.0/package/package.json not in flight; writing
+34 verbose afterAdd /home/aman/.npm/search_guru/1.0.0/package/package.json written
+35 silly fetchNamedPackageData body-parser
+36 silly mapToRegistry name body-parser
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry uri https://registry.npmjs.org/body-parser
+40 silly fetchNamedPackageData cheerio
+41 silly mapToRegistry name cheerio
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/cheerio
+45 silly fetchNamedPackageData cors
+46 silly mapToRegistry name cors
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry uri https://registry.npmjs.org/cors
+50 silly fetchNamedPackageData ejs
+51 silly mapToRegistry name ejs
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/ejs
+55 silly fetchNamedPackageData express
+56 silly mapToRegistry name express
+57 silly mapToRegistry using default registry
+58 silly mapToRegistry registry https://registry.npmjs.org/
+59 silly mapToRegistry uri https://registry.npmjs.org/express
+60 silly fetchNamedPackageData fs
+61 silly mapToRegistry name fs
+62 silly mapToRegistry using default registry
+63 silly mapToRegistry registry https://registry.npmjs.org/
+64 silly mapToRegistry uri https://registry.npmjs.org/fs
+65 silly fetchNamedPackageData mongoose
+66 silly mapToRegistry name mongoose
+67 silly mapToRegistry using default registry
+68 silly mapToRegistry registry https://registry.npmjs.org/
+69 silly mapToRegistry uri https://registry.npmjs.org/mongoose
+70 silly fetchNamedPackageData nodemon
+71 silly mapToRegistry name nodemon
+72 silly mapToRegistry using default registry
+73 silly mapToRegistry registry https://registry.npmjs.org/
+74 silly mapToRegistry uri https://registry.npmjs.org/nodemon
+75 silly fetchNamedPackageData request
+76 silly mapToRegistry name request
+77 silly mapToRegistry using default registry
+78 silly mapToRegistry registry https://registry.npmjs.org/
+79 silly mapToRegistry uri https://registry.npmjs.org/request
+80 verbose request uri https://registry.npmjs.org/body-parser
+81 verbose request no auth needed
+82 info attempt registry request try #1 at 6:21:33 AM
+83 verbose request id a452e559ca76823d
+84 http request GET https://registry.npmjs.org/body-parser
+85 verbose request uri https://registry.npmjs.org/cheerio
+86 verbose request no auth needed
+87 info attempt registry request try #1 at 6:21:33 AM
+88 http request GET https://registry.npmjs.org/cheerio
+89 verbose request uri https://registry.npmjs.org/cors
+90 verbose request no auth needed
+91 info attempt registry request try #1 at 6:21:33 AM
+92 http request GET https://registry.npmjs.org/cors
+93 verbose request uri https://registry.npmjs.org/ejs
+94 verbose request no auth needed
+95 info attempt registry request try #1 at 6:21:33 AM
+96 http request GET https://registry.npmjs.org/ejs
+97 verbose request uri https://registry.npmjs.org/express
+98 verbose request no auth needed
+99 info attempt registry request try #1 at 6:21:33 AM
+100 http request GET https://registry.npmjs.org/express
+101 verbose request uri https://registry.npmjs.org/fs
+102 verbose request no auth needed
+103 info attempt registry request try #1 at 6:21:33 AM
+104 http request GET https://registry.npmjs.org/fs
+105 verbose request uri https://registry.npmjs.org/mongoose
+106 verbose request no auth needed
+107 info attempt registry request try #1 at 6:21:33 AM
+108 http request GET https://registry.npmjs.org/mongoose
+109 verbose request uri https://registry.npmjs.org/nodemon
+110 verbose request no auth needed
+111 info attempt registry request try #1 at 6:21:33 AM
+112 http request GET https://registry.npmjs.org/nodemon
+113 verbose request uri https://registry.npmjs.org/request
+114 verbose request no auth needed
+115 info attempt registry request try #1 at 6:21:33 AM
+116 http request GET https://registry.npmjs.org/request
+117 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+118 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+119 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+120 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+121 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+122 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.97.96:443
+123 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.97.96:443
+124 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.97.96:443
+125 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.97.96:443
+126 info attempt registry request try #2 at 6:23:54 AM
+127 http request GET https://registry.npmjs.org/request
+128 info attempt registry request try #2 at 6:23:54 AM
+129 http request GET https://registry.npmjs.org/nodemon
+130 info attempt registry request try #2 at 6:23:54 AM
+131 http request GET https://registry.npmjs.org/mongoose
+132 info attempt registry request try #2 at 6:23:54 AM
+133 http request GET https://registry.npmjs.org/fs
+134 info attempt registry request try #2 at 6:23:54 AM
+135 http request GET https://registry.npmjs.org/express
+136 info attempt registry request try #2 at 6:23:54 AM
+137 http request GET https://registry.npmjs.org/body-parser
+138 info attempt registry request try #2 at 6:23:54 AM
+139 http request GET https://registry.npmjs.org/ejs
+140 info attempt registry request try #2 at 6:23:54 AM
+141 http request GET https://registry.npmjs.org/cors
+142 info attempt registry request try #2 at 6:23:54 AM
+143 http request GET https://registry.npmjs.org/cheerio
+144 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+145 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+146 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+147 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+148 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+149 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+150 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+151 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+152 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.18.96.96:443
+153 info attempt registry request try #3 at 6:27:03 AM
+154 http request GET https://registry.npmjs.org/cheerio
+155 info attempt registry request try #3 at 6:27:03 AM
+156 http request GET https://registry.npmjs.org/cors
+157 info attempt registry request try #3 at 6:27:03 AM
+158 http request GET https://registry.npmjs.org/ejs
+159 info attempt registry request try #3 at 6:27:03 AM
+160 http request GET https://registry.npmjs.org/body-parser
+161 info attempt registry request try #3 at 6:27:03 AM
+162 http request GET https://registry.npmjs.org/express
+163 info attempt registry request try #3 at 6:27:03 AM
+164 http request GET https://registry.npmjs.org/fs
+165 info attempt registry request try #3 at 6:27:03 AM
+166 http request GET https://registry.npmjs.org/request
+167 info attempt registry request try #3 at 6:27:03 AM
+168 http request GET https://registry.npmjs.org/nodemon
+169 info attempt registry request try #3 at 6:27:03 AM
+170 http request GET https://registry.npmjs.org/mongoose
+171 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+171 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+171 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+171 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+171 silly fetchPackageMetaData  error for mongoose@^5.1.2 { Error: connect ETIMEDOUT 104.18.94.96:443
+171 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+171 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+171 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+171 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+171 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+171 silly fetchPackageMetaData   syscall: 'connect',
+171 silly fetchPackageMetaData   address: '104.18.94.96',
+171 silly fetchPackageMetaData   port: 443 }
+172 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+172 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+172 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+172 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+172 silly fetchPackageMetaData  error for nodemon@^1.17.5 { Error: connect ETIMEDOUT 104.18.94.96:443
+172 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+172 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+172 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+172 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+172 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+172 silly fetchPackageMetaData   syscall: 'connect',
+172 silly fetchPackageMetaData   address: '104.18.94.96',
+172 silly fetchPackageMetaData   port: 443 }
+173 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+173 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+173 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+173 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+173 silly fetchPackageMetaData  error for request@^2.87.0 { Error: connect ETIMEDOUT 104.18.94.96:443
+173 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+173 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+173 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+173 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+173 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+173 silly fetchPackageMetaData   syscall: 'connect',
+173 silly fetchPackageMetaData   address: '104.18.94.96',
+173 silly fetchPackageMetaData   port: 443 }
+174 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+174 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+174 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+174 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+174 silly fetchPackageMetaData  error for fs@0.0.1-security { Error: connect ETIMEDOUT 104.18.94.96:443
+174 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+174 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+174 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+174 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+174 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+174 silly fetchPackageMetaData   syscall: 'connect',
+174 silly fetchPackageMetaData   address: '104.18.94.96',
+174 silly fetchPackageMetaData   port: 443 }
+175 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+175 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+175 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+175 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+175 silly fetchPackageMetaData  error for express@^4.16.3 { Error: connect ETIMEDOUT 104.18.94.96:443
+175 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+175 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+175 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+175 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+175 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+175 silly fetchPackageMetaData   syscall: 'connect',
+175 silly fetchPackageMetaData   address: '104.18.94.96',
+175 silly fetchPackageMetaData   port: 443 }
+176 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+176 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+176 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+176 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+176 silly fetchPackageMetaData  error for body-parser@^1.18.3 { Error: connect ETIMEDOUT 104.18.94.96:443
+176 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+176 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+176 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+176 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+176 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+176 silly fetchPackageMetaData   syscall: 'connect',
+176 silly fetchPackageMetaData   address: '104.18.94.96',
+176 silly fetchPackageMetaData   port: 443 }
+177 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+177 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+177 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+177 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+177 silly fetchPackageMetaData  error for ejs@^2.6.1 { Error: connect ETIMEDOUT 104.18.94.96:443
+177 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+177 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+177 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+177 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+177 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+177 silly fetchPackageMetaData   syscall: 'connect',
+177 silly fetchPackageMetaData   address: '104.18.94.96',
+177 silly fetchPackageMetaData   port: 443 }
+178 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+178 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+178 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+178 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+178 silly fetchPackageMetaData  error for cors@^2.8.4 { Error: connect ETIMEDOUT 104.18.94.96:443
+178 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+178 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+178 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+178 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+178 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+178 silly fetchPackageMetaData   syscall: 'connect',
+178 silly fetchPackageMetaData   address: '104.18.94.96',
+178 silly fetchPackageMetaData   port: 443 }
+179 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.18.94.96:443
+179 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+179 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+179 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+179 silly fetchPackageMetaData  error for cheerio@^1.0.0-rc.2 { Error: connect ETIMEDOUT 104.18.94.96:443
+179 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+179 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1043:20)
+179 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+179 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+179 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+179 silly fetchPackageMetaData   syscall: 'connect',
+179 silly fetchPackageMetaData   address: '104.18.94.96',
+179 silly fetchPackageMetaData   port: 443 }
+180 silly rollbackFailedOptional Starting
+181 silly rollbackFailedOptional Finishing
+182 silly runTopLevelLifecycles Starting
+183 silly runTopLevelLifecycles Finishing
+184 silly install printInstalled
+185 verbose stack Error: connect ETIMEDOUT 104.18.94.96:443
+185 verbose stack     at Object.exports._errnoException (util.js:1020:11)
+185 verbose stack     at exports._exceptionWithHostPort (util.js:1043:20)
+185 verbose stack     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+186 verbose cwd /media/aman/New Volume/iit mandi/searchGuru/search_guru
+187 error Linux 4.13.0-25-generic
+188 error argv "/usr/bin/node" "/usr/bin/npm" "-g" "install"
+189 error node v6.11.4
+190 error npm  v3.5.2
+191 error code ETIMEDOUT
+192 error errno ETIMEDOUT
+193 error syscall connect
+194 error network connect ETIMEDOUT 104.18.94.96:443
+195 error network This is most likely not a problem with npm itself
+195 error network and is related to network connectivity.
+195 error network In most cases you are behind a proxy or have bad network settings.
+195 error network
+195 error network If you are behind a proxy, please make sure that the
+195 error network 'proxy' config is set properly.  See: 'npm help config'
+196 verbose exit [ 1, true ]
