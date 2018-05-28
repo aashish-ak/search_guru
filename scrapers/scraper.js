@@ -3,6 +3,8 @@ var cheerio = require('cheerio');
 
 var options = {
     url: 'http://www.cse.iitd.ernet.in/index.php/2011-12-29-23-14-30/faculty',
+    method: 'GET',
+    proxy: 'http://10.7.0.1:8080',
     headers: {
         'Connection': 'keep-alive',
         'Accept': '*/*',
@@ -23,7 +25,7 @@ function callback(error, response, html) {
             var name = $(this).children().find('a').text();
             var desig = $(this).children().find('a').parent().text().trim();
             console.log(desig);
-        })
+        });
     }
     else {
         console.log(response.statusCode)

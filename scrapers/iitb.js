@@ -4,7 +4,7 @@ var cheerio = require('cheerio');
 var options = {
     url: 'https://www.cse.iitb.ac.in/page14',
     method: 'GET',
-    proxy: 'http://10.8.0.1:8080',
+    proxy: 'http://10.7.0.1:8080',
     headers: {
         'Connection': 'keep-alive',
         'Accept': '*/*',
