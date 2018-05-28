@@ -30,7 +30,7 @@ function iitbScraper() {
                 var phone = details.eq(4).text().replace('Phone Extension: ',"");
                 var email = details.children().eq(2).text().replace('cseiitbacin','@cse.iitb.ac.in').replace('iitbacin','@iitb.ac.in').replace('iitdacin','@iitd.ac.in');
                 var image = details.children().find('img').attr('src');
-                image = "https://www.cse.iitb.ac.in"+image;
+                image = "https://www.cse.iitb.ac.in/"+image;
                 "use strict";
                 var iitb_fac = {
                     name : name,
@@ -41,7 +41,7 @@ function iitbScraper() {
                     link : link
                 };
                 var query = { image: image };
-
+                
                 // Upsert - Insert if not found else update
                 
                 iitb.update(query,iitb_fac,{upsert: true},function(err){
