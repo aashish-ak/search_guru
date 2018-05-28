@@ -4,8 +4,11 @@ var request = require('request');
 var cheerio = require('cheerio');
 var iitd = require('../models/iitd');
 var iitb = require('../models/iitb');
+var iitmandi = require('../models/iitmandi');
 var iitdScraper = require('../scrapers/scraper_iitd');
 var iitbScraper = require('../scrapers/scraper_iitb');
+var iitmandiScraper = require('../scrapers/scraper_iitmandi');
+
 router.get('/', (req, res, next) => {
     res.send('foobar');
 });
@@ -45,4 +48,23 @@ router.get('/iitb/data', (req, res, next) => {
         }
     });
 });
+
+// IIT Mandi
+
+router.get('/iitmandi', (req, res, next)=>{
+    iitmandiScraper.iitmandiScraper();
+    res.json({ msg:'Scraping IIT Mandi Started'});
+});
+
+router.get('/iitmandi/data', (req, res, next) => {
+    iitmandi.find(function(err, iitmandi){
+        if(!err){
+            res.json(iitmandi);
+        }
+        else{
+            console.log(err);
+        }
+    });
+});
+
 module.exports = router;
