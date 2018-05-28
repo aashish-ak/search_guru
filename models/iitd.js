@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const iitdSchema = mongoose.Schema({
     name: {
         type: 'String',
-        required: true
+        required: true,
+        upsert: true
     },
     image: {
         type: 'String',
