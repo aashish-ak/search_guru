@@ -3,33 +3,32 @@ var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
 
-var iitd = require('../models/iitd');
-var iitb = require('../models/iitb');
-var iitmandi = require('../models/iitmandi');
-var iitk = require('../models/iitk');
-var iitr = require('../models/iitr');
+var schema = require('../models/schema');
 
-var iitdScraper = require('../scrapers/scraper_iitd');
-var iitbScraper = require('../scrapers/scraper_iitb');
-var iitmandiScraper = require('../scrapers/scraper_iitmandi');
-var iitkScraper = require('../scrapers/scraper_iitk');
-var iitrScraper = require('../scrapers/scraper_iitr');
+var scraper = require('../scrapers/scraper')
 
 router.get('/', (req, res, next) => {
     res.send('foobar');
 });
 
-// IIT Delhi
 
-router.get('/iitd', (req, res, next)=>{
-    iitdScraper.iitdScraper();
-    res.json({ msg:'Scraping IITD Started'});
+
+
+// IIT
+
+router.get('/scraper', (req, res, next)=>{
+    scraper.iitbScraper();
+    scraper.iitkScraper();
+    scraper.iitrScraper();
+    scraper.iitdScraper();
+    scraper.iitmandiScraper();
+    res.json({ msg:'Scraping IIT started'});
 });
 
-router.get('/iitd/data', (req, res, next) => {
-    iitd.find(function(err, iitd){
+router.get('/scraper/data', (req, res, next) => {
+    schema.find(function(err, data){
         if(!err){
-            res.json(iitd);
+            res.json(data);
         }
         else{
             console.log(err);
@@ -37,77 +36,5 @@ router.get('/iitd/data', (req, res, next) => {
     });
 });
 
-// IIT Bombay
-
-router.get('/iitb', (req, res, next)=>{
-    iitbScraper.iitbScraper();
-    res.json({ msg:'Scraping IITB Started'});
-});
-
-router.get('/iitb/data', (req, res, next) => {
-    iitb.find(function(err, iitb){
-        if(!err){
-            res.json(iitb);
-        }
-        else{
-            console.log(err);
-        }
-    });
-});
-
-// IIT Mandi
-
-router.get('/iitmandi', (req, res, next)=>{
-    iitmandiScraper.iitmandiScraper();
-    res.json({ msg:'Scraping IIT Mandi Started'});
-});
-
-router.get('/iitmandi/data', (req, res, next) => {
-    iitmandi.find(function(err, iitmandi){
-        if(!err){
-            res.json(iitmandi);
-        }
-        else{
-            console.log(err);
-        }
-    });
-});
-
-// IIT Kanpur
-
-router.get('/iitk', (req, res, next)=>{
-    iitkScraper.iitkScraper();
-    res.json({ msg:'Scraping IITK Started'});
-});
-
-router.get('/iitk/data', (req, res, next) => {
-    iitk.find(function(err, iitk){
-        if(!err){
-            res.json(iitk);
-        }
-        else{
-            console.log(err);
-        }
-    });
-});
-
-
-// IIT Roorkee
-
-router.get('/iitr', (req, res, next)=>{
-    iitrScraper.iitrScraper();
-    res.json({ msg:'Scraping IITR Started'});
-});
-
-router.get('/iitr/data', (req, res, next) => {
-    iitr.find(function(err, iitr){
-        if(!err){
-            res.json(iitr);
-        }
-        else{
-            console.log(err);
-        }
-    });
-});
 
 module.exports = router;
