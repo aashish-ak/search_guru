@@ -33,22 +33,51 @@ function iitdScraper() {
                     image = "http://www.cse.iitd.ernet.in" + image;
                 }
                 "use strict";
-                let iitd_fac = new iitd({
+                var iitd_fac = {
                     image: image,
                     name: name,
                     research: research,
                     email: email,
                     phone: phone,
                     link: link
-                });
-                iitd_fac.save((error) => {
-                    if (!error) {
-                        console.log('Saved');
+                };
+                
+                var query = { image: image };
+                
+                // To remove any entry
+                
+                // iitd.remove(query, function(err){
+                //     if(err){
+                //         console.log("Error Removing");
+                //     }
+                //     else{
+                //         console.log("Removed");
+                //     }
+                // });
+                
+                // Upsert - Insert if not found else update
+                
+                iitd.update(query,iitd_fac,{upsert: true},function(err){
+                        if(err){
+                            console.log(err);
+                        }
+                        else{
+                            console.log("Upserted");
+                        }
                     }
-                    else {
-                        console.log(error);
-                    }
-                });
+                )
+
+                // Allows duplicate entries
+
+                // iitd_fac.save((error) => {
+                //     if (!error) {
+                //         console.log('Saved');
+                //     }
+                //     else {
+                //         console.log(error);
+                //     }
+                // });
+
                 console.log(iitd_fac)
             });
         }
