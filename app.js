@@ -7,7 +7,7 @@ var path = require('path');
 var index = require('./routes/index.js')
 var app= express();
 const port = 3000;
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/test2');
 mongoose.connection.on('connected', ()=>{
     console.log("MongoDB working")
 });
