@@ -13,44 +13,47 @@
 				  <option value="IITD">Research Field</option>
 				  <option value="IITG">Phone Number</option>
 				</select>
-            <input type="text" name="enter" placeholder="Enter here">
+            <input [(ngModel)]="searchText" type="text" name="enter" placeholder="Enter here">
             <button type="submit" class="button_1">Search</button>
         </form>
     </div>
 </section>
-    <section id="boxes">
-        <div class="container">
-            <div class="box">
-                <img src="../../assets/img/avatar.png">
-                <h3>Name1</h3>
-                <p><b>Work Area</b> : random text</p>
-                <p><b>Email</b> : random email</p>
-                <p><b>Phone</b> : random phone no</p>
-                <p><b>Link</b> : <a href="#">random link</a></p>
-            </div>
-            <div class="box">
-                <img src="../../assets/img/avatar.png">
-                <h3>Name2</h3>
-                <p><b>Work Area</b> : random text</p>
-                <p><b>Email</b> : random email</p>
-                <p><b>Phone</b> : random phone no</p>
-                <p><b>Link</b> : <a href="#">random link</a></p>
-            </div>
-            <div class="box">
-                <img src="../../assets/img/avatar.png">
-                <h3>Name3</h3>
-                <p><b>Work Area</b> : random text</p>
-                <p><b>Email</b> : random email</p>
-                <p><b>Phone</b> : random phone no</p>
-                <p><b>Link</b> : <a href="#">random link</a></p>
-            </div>
-            <div class="box">
-                <img src="../../assets/img/avatar.png">
-                <h3>Name4</h3>
-                <p><b>Work Area</b> : random text</p>
-                <p><b>Email</b> : random email</p>
-                <p><b>Phone</b> : random phone no</p>
-                <p><b>Link</b> : <a href="#">random link</a></p>
-            </div>
+<section id="boxes">
+    <div class="container">
+        <div *ngFor="let fac of data" class="box">
+            <img src={{fac.image}}>
+            <h3><a href={{fac.link}}>{{fac.name}}</a></h3>
+            <p><b>Research Interests</b> : {{fac.research}}</p>
+            <p><b>Email</b> : {{fac.email}}</p>
+            <p><b>Phone</b> : {{fac.phone}}</p>
+            <p><b>College</b> : {{fac.collegeName}}</p>
         </div>
-    </section>
+        <!--<div class="box">
+            <img src="../../assets/img/avatar.png">
+            <h3>Name2</h3>
+            <p><b>Work Area</b> : random text</p>
+            <p><b>Email</b> : random email</p>
+            <p><b>Phone</b> : random phone no</p>
+            <p><b>Link</b> : <a href="#">random link</a></p>
+        </div>
+        <div class="box">
+            <img src="../../assets/img/avatar.png">
+            <h3>Name3</h3>
+            <p><b>Work Area</b> : random text</p>
+            <p><b>Email</b> : random email</p>
+            <p><b>Phone</b> : random phone no</p>
+            <p><b>Link</b> : <a href="#">random link</a></p>
+        </div>
+        <div class="box">
+            <img src="../../assets/img/avatar.png">
+            <h3>Name4</h3>
+            <p><b>Work Area</b> : random text</p>
+            <p><b>Email</b> : random email</p>
+            <p><b>Phone</b> : random phone no</p>
+            <p><b>Link</b> : <a href="#">random link</a></p>
+        </div>-->
+    </div>
+</section>
+<div *ngFor="let item of content | filter : searchText">
+    {{item}}
+</div>
