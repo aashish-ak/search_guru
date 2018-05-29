@@ -8,17 +8,18 @@ export class FilterPipe implements PipeTransform {
   transform(data: any[], searchIIT: string, searchText: string): any[] {
     if(!data) return [];
     if(!searchText) return data;
+    if(!searchIIT) return data;
     searchText = searchText.toUpperCase();
     searchIIT = searchIIT.toUpperCase();
-    if(searchIIT==="" || searchIIT ==="ALL IIT"){
+    if(searchIIT ==="ALL IIT"){
       return data.filter(item => {
         return item.name.toUpperCase().includes(searchText)
       })
     }
-    if(searchIIT){
+    else{
       console.log(searchIIT);
       data = data.filter(item => {
-        return item.collegeName === searchIIT;
+        return item.collegeName.toUpperCase() === searchIIT;
       });
       return data.filter(item=>{
         return item.name.toUpperCase().includes(searchText);
