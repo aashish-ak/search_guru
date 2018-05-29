@@ -1,28 +1,30 @@
 <section id="newsletter">
     <div class="container">
         <form>
+            <h1>Filters</h1>
             <select name="IITName">
-				  <option value="searchByIIT">Search by IIT</option>
+				  <option value="allIIT">All IIT</option>
 				  <option value="IITB">IIT Bombay</option>
 				  <option value="IITD">IIT Delhi</option>
-				  <option value="IITG">IIT Guwahati</option>
+				  <option value="IITK">IIT Kanpur</option>
+				  <option value="IITMandi">IIT Mandi</option>
+				  <option value="IITR">IIT Roorkee</option>
 				</select>
             <select name="Category">
 				  <option value="searchByIIT">Search by Category</option>
-				  <option value="IITB">Name</option>
-				  <option value="IITD">Research Field</option>
-				  <option value="IITG">Phone Number</option>
+				  <option value="name">Name</option>
+				  <option value="research">Research Field</option>
 				</select>
             <input [(ngModel)]="searchText" type="text" name="enter" placeholder="Enter here">
-            <button type="submit" class="button_1">Search</button>
+            <!-- <button type="submit" class="button_1">Search</button> -->
         </form>
     </div>
 </section>
 <section id="boxes">
     <div class="container">
         <div *ngFor="let fac of data" class="box">
-            <img src={{fac.image}}>
-            <h3><a href={{fac.link}}>{{fac.name}}</a></h3>
+            <img class="img-circle" src={{fac.image}}>
+            <h3><a href={{fac.link}} target="_blank">{{fac.name}}</a></h3>
             <p><b>Research Interests</b> : {{fac.research}}</p>
             <p><b>Email</b> : {{fac.email}}</p>
             <p><b>Phone</b> : {{fac.phone}}</p>
