@@ -22,7 +22,15 @@ router.get('/scraper', (req, res, next)=>{
     scraper.iitrScraper();
     scraper.iitdScraper();
     scraper.iitmandiScraper();
-    res.json({ msg:'Scraping IIT started'});
+    schema.find(function(err, data){
+        if(!err){
+            res.json(data);
+        }
+        else{
+            console.log(err);
+        }
+    });
+    //res.json({ msg:'Scraping IIT started'});
 });
 
 router.get('/scraper/data', (req, res, next) => {
