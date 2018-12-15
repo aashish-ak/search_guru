@@ -13,4 +13,7 @@ export class ApiService {
   getData(){
     return this.http.get("http://localhost:3000/scraper/data").map(res => res.json());
   }
+  scrap(){
+    return this.http.get("http://localhost:3000/scraper").map(res => res.json());
+  }
 }

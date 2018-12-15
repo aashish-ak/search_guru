@@ -6,7 +6,7 @@ function iitmandiScraper() {
     var options = {
         url: 'http://www.iitmandi.ac.in/Schools/SCEE/faculty.php',
         method: 'GET',
-        proxy: 'http://10.8.0.1:8080',
+    //    proxy: 'http://10.8.0.1:8080',
         headers: {
             'Connection': 'keep-alive',
             'Accept': '*/*',
@@ -76,7 +76,7 @@ function iitrScraper() {
     var options = {
         url: 'https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html',
         method: 'GET',
-        proxy: 'http://10.8.0.1:8080',
+    //    proxy: 'http://10.8.0.1:8080',
         headers: {
             'Connection': 'keep-alive',
             'Accept': '*/*',
@@ -135,7 +135,7 @@ function iitkScraper() {
     var options = {
         url: 'https://www.cse.iitk.ac.in/pages/Faculty.html',
         method: 'GET',
-        proxy: 'http://10.8.0.1:8080',
+    //    proxy: 'http://10.8.0.1:8080',
         headers: {
             'Connection': 'keep-alive',
             'Accept': '*/*',
@@ -195,7 +195,7 @@ function iitbScraper() {
     var options = {
         url: 'https://www.cse.iitb.ac.in/page14',
         method: 'GET',
-        proxy: 'http://10.8.0.1:8080',
+    //   proxy: 'http://10.8.0.1:8080',
         headers: {
             'Connection': 'keep-alive',
             'Accept': '*/*',
@@ -257,7 +257,7 @@ function iitdScraper() {
     var options = {
         url: 'http://www.cse.iitd.ernet.in/index.php/2011-12-29-23-14-30/faculty',
         method: 'GET',
-        proxy: 'http://10.8.0.1:8080',
+    //    proxy: 'http://10.8.0.1:8080',
         headers: {
             'Connection': 'keep-alive',
             'Accept': '*/*',
