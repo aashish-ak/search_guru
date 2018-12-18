@@ -5,7 +5,7 @@ Search Guru is a platform which scrapes information from different IIT's website
 [Aashish Kumar](https://www.facebook.com/akumar118)
 [Vishal Anand](https://www.facebook.com/vishal.nnd1)
 [Dheeraj Yadav](https://www.facebook.com/dheeraj.168)
-[Kriti Mehta](https://www.facebook.com/kanikaroseprincess?ref=br_rs)
+[Kriti Mehta](https://www.facebook.com/Kriti.Mehta02)
 [Anam Siddiqui](https://www.facebook.com/profile.php?id=100017591984045)
 [Rashika Rathi](https://www.facebook.com/rashika.sinha.75)
 
@@ -22,7 +22,7 @@ Fork this repo and clone it
 $ git clone https://github.com/<Your User Name>/search_guru.git
 ```
 
-Open the folder search_guru and install the dependencies
+Run this commmand in both the folders search_guru and client to install the dependencies
 ```bash
 $ npm install
 ```
