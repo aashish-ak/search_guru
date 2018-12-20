@@ -104,11 +104,11 @@ header a:hover{
 	font-size: 14px;
 	margin-right: 20px;
 }
-#newsletter form{
+/*#newsletter form{
 	padding-right: 10%;
 	float: right;
 	margin: 15px;
-}
+}*/
 #newsletter input[type="text"]{
 	padding: 4px;
 	height: 25px;

@@ -1,46 +1,49 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(data: any[], searchIIT: string, searchText: string): any[] {
+  transform(data: any[],searchText: string,IIT: string): any[] {
     if(!data) return [];
-    if(!searchIIT&&!searchText) return data;
-    if(!searchIIT) searchIIT="ALL IIT";
-    if(!searchText)
-    {
-      searchIIT = searchIIT.toUpperCase();
-      if(searchIIT ==="ALL IIT"){
-        return data;
-      }
-      
-      data = data.filter(item => {
-        return item.collegeName.toUpperCase() === searchIIT;
-      });
-      return data;
-    }
-    searchText = searchText.toUpperCase();
-    searchIIT = searchIIT.toUpperCase();
-    if(searchIIT ==="ALL IIT"){
-      return data.filter(item => {
-        return item.name.toUpperCase().includes(searchText)
-      })
-    }
-    else{
-      console.log(searchIIT);
-      data = data.filter(item => {
-        return item.collegeName.toUpperCase() === searchIIT;
-      });
+    if(!IIT){
+      if(!searchText) return data;
       return data.filter(item=>{
-        return item.name.toUpperCase().includes(searchText);
-      })
+        return item.name.toUpperCase().includes(searchText.toUpperCase());
+      });
     }
-  
-
-    // return data.filter(item =>{
-    //   return item.toUpperCase().includes(searchText.toUpperCase());
-    // });
+    let t= IIT.substring(1,IIT.length-1)
+    let x = t.replace(/\\n/g,"").replace(/  /g,"").replace(/\\/g,"");
+    if(x.length==0)
+    {
+      if(!searchText) return data;
+      return data.filter(item=>{
+        return item.name.toUpperCase().includes(searchText.toUpperCase());
+      });
+    }
+    let IITJ = JSON.parse(x);
+    let searchIITK = [];
+    var d=[];
+    if(IITJ.length==0)
+    {
+      if(!searchText) return data;
+      return data.filter(item=>{
+        return item.name.toUpperCase().includes(searchText.toUpperCase());
+      });
+    }
+    for(var k = IITJ.length-1;k>=0;k--)
+    {
+      searchIITK.push(IITJ[k].value.toUpperCase());
+      var temp = (data.filter(item=>{
+        if(!searchText)
+          return item;
+        return item.name.toUpperCase().includes(searchText.toUpperCase())
+      }).filter(item=>{
+        return item.collegeName.toUpperCase()===IITJ[k].value.toUpperCase();
+      }));
+      d = d.concat(temp);
+    }
+    return d;
   }
 }
