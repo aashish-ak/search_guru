@@ -33,6 +33,9 @@ export class MainComponent implements OnInit {
         }
         else this.data=data;
   }
+  /*
+    When assigning value using js/ts. Triggers like keyup or onInput are not fired. Firing them manually.
+  */
     public onAdd(item){
       let inEle = <HTMLInputElement>document.getElementById("test1");
       let k = JSON.stringify(inEle.value);
@@ -42,7 +45,6 @@ export class MainComponent implements OnInit {
       evtInput.initEvent("input", false, true);
       outEle.dispatchEvent(evtInput);
       inEle.dispatchEvent(evtInput);
-      let outEle2 = <HTMLInputElement>document.getElementById("enter");
   }
   public onRemoving(item){
       let inEle = <HTMLInputElement>document.getElementById("test1");
@@ -53,6 +55,5 @@ export class MainComponent implements OnInit {
       evtInput.initEvent("input", false, true);
       outEle.dispatchEvent(evtInput);
       inEle.dispatchEvent(evtInput);
-      let outEle2 = <HTMLInputElement>document.getElementById("enter");
     }
 }
