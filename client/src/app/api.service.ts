@@ -19,7 +19,6 @@ export class ApiService {
   getFromName(nm:string,byMethod:string)
   {
     var headers = new Headers();
-    console.log(byMethod);
     headers.append('Content-Type', 'application/json');
     let x:any;
     const httpOptions = {
@@ -39,8 +38,6 @@ export class ApiService {
     }
     var jsn ={};
     if(byMethod=="name"){
-    //	nm = "*"+nm+"*";
-    //	console.log(nm);
      jsn = {
       "query":{
         "match":{
@@ -64,7 +61,6 @@ export class ApiService {
       }
     };
     }
-    console.log(jsn);
     let t;
     return this.http.post('http://localhost:9200/search_guru/prof/_search?size=1000', 
                             jsn,
