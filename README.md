@@ -12,7 +12,14 @@ Search Guru is a platform which scrapes information from different IIT's website
 ## Getting Started
 
 Install ElasticSearch, follow tutorial on [Install](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html).
-
+Enable CORS in elasticsearch, add following lines in ES_INSTALL_DIR/config/elasticsearch.yml
+```yml
+http.cors.enabled : true
+ 
+http.cors.allow-origin : "*"
+http.cors.allow-methods : OPTIONS, HEAD, GET, POST, PUT, DELETE
+http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type, Content-Length
+```
 Install the Node Package Manager 
 ```bash
 $ sudo snap install node --classic --channel=10
