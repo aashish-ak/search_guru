@@ -11,6 +11,8 @@ Search Guru is a platform which scrapes information from different IIT's website
 
 ## Getting Started
 
+Install ElasticSearch, follow tutorial on [Install](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html).
+
 Install the Node Package Manager 
 ```bash
 $ sudo snap install node --classic --channel=10
