@@ -34,6 +34,7 @@ export class MainComponent implements OnInit {
         }
         else this.onTextChange(1);
   }
+
   async updateData(st:string,byMethod:string) {
       let data = await this.apiService.getFromName(st,byMethod).toPromise();
       var x = JSON.parse(data["_body"])["hits"]["hits"];
@@ -42,13 +43,16 @@ export class MainComponent implements OnInit {
         temp.push(x[i]["_source"]);
       this.data = temp;
   }
-  /*
-    When assigning value using js/ts. Triggers like keyup or onInput are not fired. Firing them manually.
-  */public onTextChange(event){
+  public onTextChange(event){
     let searchText = (<HTMLInputElement>document.getElementById("enter")).value;
     let searchBy = (<HTMLInputElement>document.getElementById("category")).value;
     this.updateData(searchText,searchBy);
   }
+
+  /*
+    When assigning value using js/ts. Triggers like keyup or onInput are not fired. Firing them manually.
+  */
+
     public onAdd(item){
       let inEle = <HTMLInputElement>document.getElementById("test1");
       let k = JSON.stringify(inEle.value);
@@ -59,7 +63,6 @@ export class MainComponent implements OnInit {
       outEle.dispatchEvent(evtInput);
       inEle.dispatchEvent(evtInput);
   }
-  
   public onRemoving(item){
       let inEle = <HTMLInputElement>document.getElementById("test1");
       let k = JSON.stringify(inEle.value);
