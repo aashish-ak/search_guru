@@ -28,14 +28,31 @@ export class MainComponent implements OnInit {
           while(cnt<5){
             this.delay(1000);
             data2 = await this.apiService.getData().toPromise();
-            this.data = data2;
+          //  this.data = data2;
+            this.onTextChange(1);
           }
         }
-        else this.data=data;
+        else this.onTextChange(1);
   }
+
+  async updateData(st:string,byMethod:string) {
+      let data = await this.apiService.getFromName(st,byMethod).toPromise();
+      var x = JSON.parse(data["_body"])["hits"]["hits"];
+      var temp = [];
+      for(var i=0;i<x.length;i++)
+        temp.push(x[i]["_source"]);
+      this.data = temp;
+  }
+  public onTextChange(event){
+    let searchText = (<HTMLInputElement>document.getElementById("enter")).value;
+    let searchBy = (<HTMLInputElement>document.getElementById("category")).value;
+    this.updateData(searchText,searchBy);
+  }
+
   /*
     When assigning value using js/ts. Triggers like keyup or onInput are not fired. Firing them manually.
   */
+
     public onAdd(item){
       let inEle = <HTMLInputElement>document.getElementById("test1");
       let k = JSON.stringify(inEle.value);

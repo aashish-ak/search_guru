@@ -18,9 +18,11 @@
             </tag-input> 
         <div><br/></div>
         <h1>Search Professor: </h1>
-            <input [(ngModel)]="searchText" type="text" name="enter" id="enter" placeholder="Search..">
-           <select name="Category">
-				  <option value="searchByIIT">Search by Category</option>
+
+            <input [(ngModel)]="searchText" type="text" name="enter" id="enter" placeholder="Search.." (input)="onTextChange($event)">
+           <select name="Category" id="category" (input)="onTextChange($event)">
+				  <!-- <option value="searchByIIT">Search by Category</option> -->
+
 				  <option value="name">Name</option>
 				  <option value="research">Research Field</option>
             </select>
@@ -32,7 +34,9 @@
 </section>
 <section id="boxes">
     <div class="container">
-        <div *ngFor="let fac of data | filter:searchText:IIT2" class="box">
+
+<!--        <div *ngFor="let fac of data | filter:searchText:IIT2 " class="box"> -->
+        <div *ngFor="let fac of data | filter:IIT2" class="box">
 
             <img class="img-circle" src={{fac.image}}>
             <h3><a href={{fac.link}} target="_blank">{{fac.name}}</a></h3>
