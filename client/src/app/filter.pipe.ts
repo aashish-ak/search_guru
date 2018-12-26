@@ -1,17 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import {Http, Headers } from '@angular/http';
 
 @Pipe({
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-
-  transform(data: any[],searchText: string,IIT: string): any[] {
+  constructor(private http:Http) { }
+  transform(data: any[],IIT: string) {
     if(!data) return [];
     if(!IIT){
-      if(!searchText) return data;
-      return data.filter(item=>{
-        return item.name.toUpperCase().includes(searchText.toUpperCase());
-      });
+      return data;
     }
     /*
       IIT contains output from tags-input in json format, but it is too ugly.
@@ -19,13 +17,20 @@ export class FilterPipe implements PipeTransform {
     */
     let IITsub= IIT.substring(1,IIT.length-1)
     let PreJson = IITsub.replace(/\\n/g,"").replace(/  /g,"").replace(/\\/g,"");
-    
+    console.log(PreJson.length);
     if(PreJson.length==0)
     {
-      if(!searchText) return data;
-      return data.filter(item=>{
-        return item.name.toUpperCase().includes(searchText.toUpperCase());
-      });
+      return data;
+     //  if(!searchText) return data;
+     // return data.filter(item=>{
+     //   return item.name.toUpperCase().includes(searchText.toUpperCase());
+    // });
+    //   console.log("YO2");
+    // //  let k;(this.getFromName(searchText));
+    // //  let x = k["__zone_symbol__value"];
+    //   let k = await(this.getFromName(searchText));
+    //   console.log(k);
+    //  return k["__zone_symbol__value"];
     }
     /*
       Parsing JSON.
@@ -35,10 +40,7 @@ export class FilterPipe implements PipeTransform {
     var ProData=[];
     if(IITJ.length==0)
     {
-      if(!searchText) return data;
-      return data.filter(item=>{
-        return item.name.toUpperCase().includes(searchText.toUpperCase());
-      });
+      return data;
     }
     /*
       For each IIT chosen,
@@ -49,10 +51,6 @@ export class FilterPipe implements PipeTransform {
     {
       searchIITK.push(IITJ[k].value.toUpperCase());
       var temp = (data.filter(item=>{
-        if(!searchText)
-          return item;
-        return item.name.toUpperCase().includes(searchText.toUpperCase())
-      }).filter(item=>{
         return item.collegeName.toUpperCase()===IITJ[k].value.toUpperCase();
       }));
       ProData = ProData.concat(temp);
