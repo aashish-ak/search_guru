@@ -386,7 +386,7 @@ function iitb_ee_Scraper() {
                       teleph=phone[1]+" "+phone[2];
                       email=phone[3]; 
                     }
-               email=email.replace('[AT]','@');
+                email=email.replace('[AT]','@');
                 "use strict";
                 var iitb_ee_fac = {
                     name : name,
