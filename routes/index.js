@@ -7,6 +7,7 @@ var schema = require('../models/schema');
 
 var scraper = require('../scrapers/scraper')
 
+
 router.get('/', (req, res, next) => {
     res.send('foobar');
 });
@@ -22,6 +23,7 @@ router.get('/scraper', (req, res, next)=>{
     scraper.iitrScraper();
     scraper.iitdScraper();
     scraper.iitmandiScraper();
+    scraper.iitb_ee_Scraper();
     schema.find(function(err, data){
         if(!err){
             res.json(data);
