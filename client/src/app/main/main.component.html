@@ -1,26 +1,43 @@
 <section id="newsletter">
-    <div class="container">
-            <h1>Filters</h1>
-            <select  name="IITName" [(ngModel)]="searchIIT">
-				  <option >All IIT</option>
-				  <option >IIT Bombay</option>
-				  <option >IIT Delhi</option>
-				  <option >IIT Kanpur</option>
-				  <option >IIT Mandi</option>
-				  <option >IIT Roorkee</option>
-            </select>
-            <select name="Category">
-				  <option value="searchByIIT">Search by Category</option>
+    <div class="container" (click)="onAdd($event)">
+        <h1>Select IIT(s): </h1>
+            <!-- Don't touch this tag unless you need to. This is imported from ngx-chips package. Link: https://github.com/Gbuomprisco/ngx-chips -->
+            <tag-input [(ngModel)]="multIIT" 
+               [onlyFromAutocomplete] ="true" 
+               (onTextChange)="onAdd($event)"
+               (onRemove)="onRemoving($event)"
+               (onBlur)="onAdd($event)"
+               (mousemove)="onAdd($event)"
+               theme='bootstrap'
+               placeholder="Select IITs..."
+               secondaryPlaceholder="Select IITs..."
+               style="display: inline-block;">
+                <tag-input-dropdown [showDropdownIfEmpty]="true"
+                      [autocompleteItems]="['IIT Bombay','IIT Delhi','IIT Kanpur','IIT Mandi','IIT Roorkee']">
+                </tag-input-dropdown>
+            </tag-input> 
+        <div><br/></div>
+        <h1>Search Professor: </h1>
+
+            <input [(ngModel)]="searchText" type="text" name="enter" id="enter" placeholder="Search.." (input)="onTextChange($event)">
+           <select name="Category" id="category" (input)="onTextChange($event)">
+				  <!-- <option value="searchByIIT">Search by Category</option> -->
+
 				  <option value="name">Name</option>
 				  <option value="research">Research Field</option>
             </select>
-            <input [(ngModel)]="searchText" type="text" name="enter" placeholder="Search..">
+            <input [(ngModel)]="IIT" type="hidden" value={{multIIT|json}} id="test1" style="display:none;">
+            <input [(ngModel)]="IIT2" type="hidden" id="test2" value='[{}]'>
+
             <!-- <button type="submit" class="button_1">Search</button> -->
     </div>
 </section>
 <section id="boxes">
     <div class="container">
-        <div *ngFor="let fac of data | filter:searchIIT:searchText" class="box">
+
+<!--        <div *ngFor="let fac of data | filter:searchText:IIT2 " class="box"> -->
+        <div *ngFor="let fac of data | filter:IIT2" class="box">
+
             <img class="img-circle" src={{fac.image}}>
             <h3><a href={{fac.link}} target="_blank">{{fac.name}}</a></h3>
             <p><b>Research Interests</b> : {{fac.research}}</p>

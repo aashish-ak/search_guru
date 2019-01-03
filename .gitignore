@@ -1,0 +1,6 @@
+node_modules/
+client/node_modules/
+elasticsearch-6.5.4/
+Documentation/
+package-lock.json
+client/package-lock.json

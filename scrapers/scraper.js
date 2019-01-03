@@ -52,7 +52,8 @@ function iitmandiScraper() {
                 var query = {image: image};
                 
                 // Upsert - Insert if not found else update
-                
+                // console.log(iitmandi_fac);
+                // console.log(query);
                 schema.update(query,iitmandi_fac,{upsert: true},function(err){
                     if(err){
                         console.log(err);
