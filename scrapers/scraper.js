@@ -368,24 +368,19 @@ function iitb_ee_Scraper() {
                 phone=phone.replace(/6 9/,'6-9');
                 phone=phone.replace(/\n/,'');
                 phone=phone.replace(/\s\s+/g,' ');
-                var teleph;
+                var teleph=[];
                 var email;
                 var research=$(this).find(".facri").children(".fac_ri").text().replace(/\s\s+/g,'');
                 research=research.replace('Area:','');
                 var image = $(this).find('img').attr('src');
                 console.log(image);
                 phone=phone.split(' ');
-                if (phone.length==7)
-                  {   
-                    teleph=phone[1]+" "+phone[2]+","+phone[3]+" "+phone[4];
-                    email=phone[5];
-                  }
-                                                                             
-                else
-                    { 
-                      teleph=phone[1]+" "+phone[2];
-                      email=phone[3]; 
-                    }
+                var i;
+                for(i=1;i<phone.length-2;i++)
+                {
+                  teleph=teleph+" "+phone[i];
+                }
+                email=phone[phone.length-2]
                 email=email.replace('[AT]','@');
                 "use strict";
                 var iitb_ee_fac = {
