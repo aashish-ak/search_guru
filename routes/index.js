@@ -4,8 +4,8 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 var schema = require('../models/schema');
-
 var scraper = require('../scrapers/scraper');
+
 router.get('/', (req, res, next) => {
     res.send('foobar');
 });
@@ -21,6 +21,8 @@ router.get('/scraper', (req, res, next)=>{
     scraper.iitrScraper();
     scraper.iitdScraper();
     scraper.iitmandiScraper();
+    scraper.iitb_ee_Scraper();
+
     setTimeout(function(){
     schema.find(function(err, data){
         if(!err){
@@ -63,6 +65,5 @@ router.get('/scraper/data', (req, res, next) => {
         }
     });
 });
-
 
 module.exports = router;

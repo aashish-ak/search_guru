@@ -342,11 +342,88 @@ function iitdScraper() {
     });
 }
 
+function iitb_ee_Scraper() {
+    var options = {
+        url: 'https://www.ee.iitb.ac.in/web/people/faculty',
+        method: 'GET',
+    //    proxy: 'http://10.8.0.1:8080',
+        headers: {
+            'Connection': 'keep-alive',
+            'Accept': '*/*',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+        }
+    };
 
+    request(options, function (error, response, html) {
+        if (!error && response.statusCode == 200) {
+        
+           const $ = cheerio.load(html);
+           var fac = $(".facultyview").children('li');
+           fac.each(function (i, el) {
+                
+                var name = $(this).find('a').text().replace(/\s\s+/g,'');
+                name = name.replace(/... more/,'');
+                
+                var phone =$(this).find(".ppe").text();
+                phone = phone.replace(/6 9/,'6-9');
+                phone = phone.replace(/\n/,'');
+                phone = phone.replace(/\s\s+/g,' ');
+                phone = phone.split(' ');
+                
+                var i;
+                var teleph = [];
+                for(i=1;i<phone.length-2;i++)
+                {
+                  teleph = teleph+" "+phone[i];
+                }
+                
+                var link = $(this).find('a').attr('href');
+
+                var research = $(this).find(".facri").children(".fac_ri").text().replace(/\s\s+/g,'');
+                research = research.replace('Area:','');
+                
+                var image = $(this).find('img').attr('src');
+                
+                var email;
+                email = phone[phone.length-2]
+                email = email.replace('[AT]','@');
+                
+                "use strict";
+                var iitb_ee_fac = {
+                    name : name,
+                    research : research,
+                    image : image,
+                    email : email,
+                    phone : teleph,
+                    link : link,
+                    collegeName : "IIT Bombay (EE)"
+                };
+
+                var query = {image: image};
+
+                schema.update(query,iitb_ee_fac,{upsert: true},function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        console.log("Upserted IITB EE");
+                    }
+                });
+
+                console.log(iitb_ee_fac);
+            })
+        }
+        else {
+            console.log(response.statusCode)
+            console.log(error)
+        }
+    });
+}
 module.exports = {
     iitrScraper,
     iitdScraper,
     iitmandiScraper,
     iitbScraper,
-    iitkScraper
+    iitkScraper,
+    iitb_ee_Scraper
 }
