@@ -362,31 +362,31 @@ function iitb_ee_Scraper() {
            fac.each(function (i, el) {
                 
                 var name = $(this).find('a').text().replace(/\s\s+/g,'');
-                name=name.replace(/... more/,'');
+                name = name.replace(/... more/,'');
                 
                 var phone =$(this).find(".ppe").text();
-                phone=phone.replace(/6 9/,'6-9');
-                phone=phone.replace(/\n/,'');
-                phone=phone.replace(/\s\s+/g,' ');
-                phone=phone.split(' ');
+                phone = phone.replace(/6 9/,'6-9');
+                phone = phone.replace(/\n/,'');
+                phone = phone.replace(/\s\s+/g,' ');
+                phone = phone.split(' ');
                 
                 var i;
-                var teleph=[];
+                var teleph = [];
                 for(i=1;i<phone.length-2;i++)
                 {
-                  teleph=teleph+" "+phone[i];
+                  teleph = teleph+" "+phone[i];
                 }
                 
-                var link=$(this).find('a').attr('href');
+                var link = $(this).find('a').attr('href');
 
-                var research=$(this).find(".facri").children(".fac_ri").text().replace(/\s\s+/g,'');
-                research=research.replace('Area:','');
+                var research = $(this).find(".facri").children(".fac_ri").text().replace(/\s\s+/g,'');
+                research = research.replace('Area:','');
                 
                 var image = $(this).find('img').attr('src');
                 
                 var email;
-                email=phone[phone.length-2]
-                email=email.replace('[AT]','@');
+                email = phone[phone.length-2]
+                email = email.replace('[AT]','@');
                 
                 "use strict";
                 var iitb_ee_fac = {
