@@ -6,10 +6,6 @@ var cheerio = require('cheerio');
 var schema = require('../models/schema');
 var scraper = require('../scrapers/scraper');
 
-
-
-
-
 router.get('/', (req, res, next) => {
     res.send('foobar');
 });
@@ -69,6 +65,5 @@ router.get('/scraper/data', (req, res, next) => {
         }
     });
 });
-
 
 module.exports = router;
