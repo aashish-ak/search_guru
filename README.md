@@ -43,4 +43,8 @@ $ nodemon
 $ npm start
 ```
 
-The web app runs at port 4200 i.e. http://localhost:4200/ and the Mongoose db at port 3000
+The web app runs at port 4200 i.e. `http://localhost:4200/` and the Mongoose db at port 3000
+
+## Want to help? [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/aashish-ak/search_guru/issues)
+
+Want to file a bug, request a feature, contribute some code, or improve documentation? Excellent! Read up on our guidelines for [contributing](CONTRIBUTING.md) and then check out one of our [issues](https://github.com/aashish-ak/search_guru/issues). Make sure you follow the guidelines before sending a contribution!
