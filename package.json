@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aashish-ak/search_guru"
+  },
   "author": "aashish-ak",
   "license": "ISC",
   "dependencies": {
@@ -16,7 +20,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
-    "mongoose": "^5.1.2",
+    "mongoose": "^5.6.0",
     "nodemon": "^1.17.5",
     "request": "^2.87.0"
   },
