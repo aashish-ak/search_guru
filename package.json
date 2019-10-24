@@ -20,7 +20,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
-    "mongoose": "^5.6.0",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.17.5",
     "request": "^2.87.0"
   },
