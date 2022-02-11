@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "@ngtools/webpack": "^8.0.3",
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "ajv-keywords": "^3.4.0",
     "core-js": "^2.5.4",
     "hoek": "^5.0.3",
